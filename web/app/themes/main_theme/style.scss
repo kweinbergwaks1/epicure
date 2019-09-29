@@ -1,0 +1,844 @@
+/*!
+Theme Name: main_theme
+Author: Kenneth Dan Weinberg Waks
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+
+*/
+
+/*--------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+// General
+$color_background: #fff;
+$color_for_texts: #000;
+$color_for_search_border: solid #000000;
+$input-search-background-color: rgba(255, 255, 255, 0.11);
+$background-color-different-sections: #FAFAFA;
+$transparent-color: rgba(255, 255, 255, 0.83);
+$background-color-for-cards: #f9f4ea;
+$margin-left-responsive: 425px;
+
+// Header
+$width-custom-logo-link: 33px;
+$width-header-search-logo: 22px;
+$width-header-search-logo-big: 31px;
+
+// Pages
+// Home
+
+// Footer
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background: $color_background;
+  margin: 0;
+  /* Fallback for when there is no custom background color defined. */
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+* {
+  font-family: "Helvetica Neue", serif;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  font-weight: 100;
+  color: $color_for_texts;
+}
+
+input[type=text] {
+  font-weight: 100;
+  border-radius: 4px;
+  background-color: $input-search-background-color;
+  &::placeholder {
+    font-weight: 100;
+    opacity: 0.8;
+  }
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.header-container {
+  top: 0;
+  position: fixed;
+  overflow: hidden;
+  padding: 10px 123px;
+  width: 100%;
+  max-width: 1674px;
+  z-index: 1;
+  background-color: $color_background;
+  .header-logo {
+    float: left;
+    width: $width-custom-logo-link;
+    margin-right: 15px;
+  }
+
+  .header-title {
+    .text {
+      float: left;
+      font-size: 27px;
+      letter-spacing: 1.35px;
+      font-weight: 100;
+      margin: 0;
+    }
+  }
+
+  .header-search {
+    position: relative;
+    float: right;
+    margin-right: 30px;
+    input[type=text] {
+      width: 370px;
+      height: 25px;
+      font-size: 16px;
+      letter-spacing: 1.29px;
+      border: $color_for_search_border 0.5px;
+      padding: 4px 45px 4px 8px;
+      &::placeholder {
+        font-size: 16px;
+        letter-spacing: 1.29px;
+      }
+    }
+    img {
+      position: absolute;
+      width: $width-header-search-logo;
+      right: 0;
+      top: 5px;
+      padding-right: 13px;
+    }
+    .search-results {
+      position: fixed;
+      margin-left: 66%;
+      width: 370px;
+      padding: 0 20px;
+      margin-top: 8px;
+    }
+  }
+
+  .header-tools {
+    float: right;
+    padding-top: 5px;
+    img {
+      width: $width-header-search-logo;
+    }
+    .tools-user {
+      margin-right: 28px;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.site-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+  position: absolute;
+  padding: 30px 0;
+  background-color: $color_background;
+}
+
+.site-info {
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  padding: 0 40%;
+}
+
+.footer-link {
+  font-size: 18px;
+  font-weight: 100;
+  letter-spacing: 1.13px;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+  text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.main-navigation {
+  display: inline;
+  float: left;
+  font-size: 18px;
+  letter-spacing: 1.92px;
+  font-weight: 100;
+  padding: 5px 0;
+  margin-left: 32px;
+  ul {
+    display: none;
+    list-style: none;
+    li:hover > ul,
+    li.focus > ul {
+      left: auto;
+    }
+    ul {
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      float: left;
+      position: absolute;
+      top: 100%;
+      left: -999em;
+      z-index: 99999;
+      a {
+        width: 200px;
+      }
+      li:hover > ul,
+      li.focus > ul {
+        left: 100%;
+      }
+      ul {
+        left: -999em;
+        top: 0;
+      }
+    }
+  }
+  li {
+    float: left;
+    position: relative;
+    margin-right: 20px;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+}
+
+/* Small menu. */
+.menu-toggle, .main-navigation.toggled ul {
+  display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+  .menu-toggle {
+    display: none;
+  }
+  .main-navigation {
+    ul {
+      display: inline;
+    }
+  }
+}
+
+.site-main {
+  .comment-navigation, .posts-navigation, .post-navigation {
+    margin: 0 0 1.5em;
+    overflow: hidden;
+  }
+}
+
+.comment-navigation, .posts-navigation, .post-navigation {
+  .nav-previous {
+    float: left;
+    width: 50%;
+  }
+}
+
+.comment-navigation, .posts-navigation, .post-navigation {
+  .nav-next {
+    float: right;
+    text-align: right;
+    width: 50%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Pages Content
+--------------------------------------------------------------*/
+
+// General resources
+.site-content {
+  margin-top: 55px;
+  width: 100%;
+  min-height: 830px;
+}
+
+.s-box-title {
+  font-size: 30px;
+  line-height: 1.33;
+  letter-spacing: 1.25px;
+  text-align: center;
+}
+
+.s-box-cards {
+  display: flex;
+  justify-content: center;
+  margin-top: 42px;
+  a {
+    margin-right: 15px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.restaurant-card {
+  width: 360px;
+  height: 357px;
+  background-color: $background-color-for-cards;
+  text-align: center;
+  .r-card-title {
+    font-size: 40px;
+    letter-spacing: 2.67px;
+    margin-top: 28px;
+    margin-bottom: 0;
+    font-weight: normal;
+  }
+  .r-card-chef {
+    font-size: 25px;
+    letter-spacing: 1.67px;
+    margin-top: 4px;
+  }
+}
+
+.chef-profile {
+  flex-shrink: 0;
+  display: grid;
+  img {
+    width: 400px;
+  }
+  span {
+    background-color: $transparent-color;
+    font-size: 40px;
+    font-weight: normal;
+    letter-spacing: 1.43px;
+    margin-top: -55px;
+  }
+}
+
+.dish-card {
+  width: 360px;
+  height: 735px;
+  background-color: $background-color-for-cards;
+  text-align: center;
+  margin-right: 15px;
+  &:last-child {
+    margin-right: 0;
+  }
+  .d-card-restaurant {
+    margin: 0;
+    padding: 16px;
+    background-color: $color_background;
+    font-size: 30px;
+    font-weight: normal;
+    letter-spacing: 1.77px;
+  }
+  .d-card-title {
+    font-size: 38.4px;
+    font-weight: normal;
+    line-height: 1.23;
+    letter-spacing: 2.56px;
+    margin: 10px 0 20px;
+    padding: 0 70px;
+  }
+  .d-card-ingredients {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 1.6px;
+    margin: 0;
+    padding: 0 42px;
+  }
+  .d-card-type {
+    position: absolute;
+    bottom: 38px;
+    margin-left: -16px;
+  }
+  .d-card-price {
+    display: flex;
+    position: absolute;
+    bottom: 8px;
+    margin-left: 42px;
+    .price-text {
+      font-weight: normal;
+      margin: 0 10px;
+    }
+    .price-line-divisor {
+      width: 112px;
+      height: 1px;
+      border: solid 0.5px #979797;
+    }
+  }
+}
+
+.search-results {
+  display: none;
+  position: absolute;
+  left: 5px;
+  width: 410px;
+  padding: 10px 57px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  background-color: $color_background;
+  .type-results {
+    opacity: 0.5;
+    font-size: 15px;
+    letter-spacing: 1.07px;
+    display: none;
+  }
+  .content-results {
+    font-size: 15px;
+    letter-spacing: 1.07px;
+  }
+}
+
+
+// HOME PAGE
+.home-primary {
+  position: relative;
+  width: 100%;
+  .primary-box {
+    position: absolute;
+    width: 950px;
+    height: 230px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: $transparent-color;
+    .p-box-title {
+      font-size: 35px;
+      line-height: 1.1;
+      letter-spacing: 3px;
+      padding: 0 250px;
+    }
+    .p-box-search {
+      position: absolute;
+      top: 160px;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      input[type=text] {
+        width: 445px;
+        height: 48px;
+        font-size: 22px;
+        letter-spacing: 1.57px;
+        border: $color_for_search_border 0.5px;
+        padding: 4px 8px 4px 80px;
+        &::placeholder {
+          font-size: 22px;
+          letter-spacing: 1.57px;
+        }
+      }
+      .search-icon {
+        position: absolute;
+        width: $width-header-search-logo-big;
+        left: 0;
+        top: 13px;
+        margin-left: 22px;
+      }
+      .cancel-icon {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 20px;
+        margin-right: 22px;
+      }
+    }
+  }
+}
+
+.home-secondary {
+  position: relative;
+  width: 100%;
+  margin-top: 5px;
+  .s-box-restaurants {
+    margin-top: 140px;
+    .box-restaurants-link {
+      display: flex;
+      float: right;
+      margin-right: 21.5%;
+      margin-top: 10px;
+      p {
+        font-size: 30px;
+        font-weight: normal;
+        letter-spacing: 2px;
+        margin-right: 12px;
+      }
+      img {
+        width: 24px;
+      }
+    }
+
+  }
+  .s-box-dishes {
+    margin-top: 155px;
+  }
+}
+
+.home-meanings {
+  width: 100%;
+  text-align: center;
+  background-color: $background-color-different-sections;
+  margin-top: 80px;
+  padding-bottom: 10px;
+  .meanings-title {
+    font-size: 30px;
+    letter-spacing: 2.14px;
+    padding-top: 40px;
+  }
+  .icon-meaning {
+    margin-right: 90px;
+    &:last-child {
+      margin-right: 0;
+    }
+    p {
+      font-size: 25.2px;
+      letter-spacing: 1.94px;
+    }
+  }
+}
+
+.home-chefweek {
+  width: 100%;
+  text-align: center;
+  margin-top: 140px;
+  .chefweek-title {
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin: 0 0 50px;
+  }
+  .chefweek-box {
+    display: inline-flex;
+    margin: 0 $margin-left-responsive;
+
+    .chef-biography {
+      p {
+        margin: 0;
+        font-size: 25px;
+        line-height: 1.2;
+        letter-spacing: 1.08px;
+        text-align: justify;
+      }
+      margin-left: 50px;
+    }
+  }
+  .chefweek-restaurants {
+    text-align: left;
+    margin-left: $margin-left-responsive;
+    .cw-rest-title {
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: 1.29px;
+      margin: 70px 0 20px;
+    }
+    .cw-box-cards {
+      display: inline-flex;
+      .cw-rest-card {
+        width: 231px;
+        height: 357px;
+        background-color: $background-color-for-cards;
+        margin-right: 20px;
+        &:last-child {
+          margin-right: 0px;
+        }
+        p {
+          font-size: 30px;
+          font-weight: normal;
+          text-align: center;
+          margin-top: 15px;
+          padding: 0 30px;
+        }
+      }
+    }
+  }
+}
+
+.home-about {
+  width: 100%;
+  background-color: $background-color-different-sections;
+  display: inline-flex;
+  margin-top: 120px;
+  padding-bottom: 60px;
+
+  .about-left {
+    margin-left: $margin-left-responsive;
+    width: 30%;
+    .about-title {
+      font-size: 30px;
+      letter-spacing: 1.89px;
+    }
+    .about-text {
+      font-size: 22px;
+      letter-spacing: 1.69px;
+      text-align: justify;
+    }
+    .about-dw {
+      width: 181.4px;
+      height: 52.8px;
+      border-radius: 9.6px;
+      border: solid 0.6px #000000;
+      display: inline-flex;
+      margin: 10px 15px 0 0;
+      .about-dw-text {
+        margin-top: 8px;
+        margin-left: 15px;
+        text-align: center;
+        font-weight: normal;
+        letter-spacing: 1.29px;
+        .dw-text-normal {
+          margin: 0;
+          font-size: 13.2px;
+        }
+        .dw-text-bigger {
+          margin: 0;
+          font-size: 16.8px;
+        }
+      }
+      &:last-child {
+        margin-right: 0;
+        .about-dw-text {
+          margin-left: 30px;
+        }
+      }
+      img {
+        margin-left: 11px;
+      }
+    }
+  }
+
+  .about-right {
+    display: inline-flex;
+    margin-left: 200px;
+  }
+}
+
+
+// RESTAURANTS AND CHEFS LIST PAGE
+.restaurant-page {
+  min-height: 80vh;
+  padding: 0 360px;
+  .filter-list {
+    text-align: center;
+    margin-top: 43px;
+    margin-right: 41px;
+    font-size: 18px;
+    letter-spacing: 1.92px;
+    &:last-child {
+      margin-right: 0;
+    }
+    .selected {
+      font-weight: normal;
+    }
+  }
+  .title-section {
+    text-align: center;
+    p {
+      font-size: 44px;
+      font-weight: normal;
+      line-height: 1.33;
+      letter-spacing: 6.25px;
+      margin: 0 0 30px;
+    }
+  }
+  .results-restaurants {
+    margin: 42px 0 20px;
+    .s-box-cards {
+      margin-top: 0;
+      flex-wrap: wrap;
+      justify-content: normal;
+      .link-restaurant-card-result {
+        margin: 0 40px 40px 0;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      .chef-profile {
+        width: 350px;
+        text-align: center;
+        span {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}
+
+
+// PERSONAL RESTAURANT PAGE
+.restaurant-site {
+  text-align: center;
+  padding: 0 409px;
+  .profile-section {
+    .title-profile {
+      font-size: 55px;
+      font-weight: normal;
+      letter-spacing: 3.67px;
+      margin: 27.2px 0 0;
+    }
+    .chef-profile {
+      font-size: 30px;
+      letter-spacing: 2px;
+      margin: 5px 0 0;
+    }
+    .open-profile {
+      display: inline-flex;
+      margin-top: 27.2px;
+      img {
+        margin-right: 9px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 0.94;
+        letter-spacing: 1.2px;
+        margin: 0;
+      }
+    }
+  }
+  .filter-section {
+    margin-top: 48px;
+    a {
+      font-size: 25.5px;
+      letter-spacing: 1.82px;
+    }
+    img {
+      margin-top: 6px;
+      display: none;
+    }
+    .item-filter {
+      display: inline-grid;
+      width: 105px;
+      margin: 0 15px;
+      .show {
+        display: block;
+      }
+    }
+  }
+  .dishes-results {
+    .s-box-cards {
+      flex-wrap: wrap;
+      justify-content: normal;
+      .dish-card {
+        width: 236px;
+        height: 413px;
+        margin: 0 19px 53px;
+        position: relative;
+        img {
+          height: 150px;
+          width: 100%;
+          object-fit: none;
+        }
+        .d-card-title {
+          font-size: 22.5px;
+          line-height: 1.14;
+          letter-spacing: 1.5px;
+          padding: 0 10px;
+          margin-top: 18px;
+        }
+        .d-card-ingredients {
+          font-size: 19.5px;
+          line-height: 1.31;
+          letter-spacing: 1.3px;
+          padding: 0 30px;
+        }
+        .d-card-price {
+          bottom: 25px;
+          .price-text {
+            font-size: 21px;
+            margin: -10px 10px;
+            letter-spacing: 0.9px;
+          }
+          .price-line-divisor {
+            width: 49.5px;
+            border: solid 0.2px #979797;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// PERSONAL CHEF PAGE
+.content-chef {
+  .home-chefweek {
+    margin: 30px 0 50px;
+    .chefweek-title {
+      font-size: 40px;
+      font-weight: normal;
+      letter-spacing: 2.94px;
+      margin-bottom: 30px;
+    }
+    .cw-rest-title {
+      margin-top: 40px;
+    }
+    .cw-box-cards {
+      a {
+        margin-right: 15px;
+      }
+    }
+    .cw-rest-card {
+      height: 215px !important;
+    }
+  }
+}
+
+
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear, .entry-content, .comment-content, .site-header, .site-content, .site-footer {
+  &:before, &:after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+  }
+}
+
+.clear, .entry-content, .comment-content, .site-header, .site-content, .site-footer {
+  &:after {
+    clear: both;
+  }
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content, .entry-content, .comment-content {
+  .wp-smiley {
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+  }
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed, iframe, object {
+  max-width: 100%;
+}

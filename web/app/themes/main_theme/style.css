@@ -1,0 +1,784 @@
+/*!
+Theme Name: main_theme
+Author: Kenneth Dan Weinberg Waks
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+
+*/
+/*--------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  margin: 0;
+  /* Fallback for when there is no custom background color defined. */
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+* {
+  font-family: "Helvetica Neue", serif;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  font-weight: 100;
+  color: #000;
+}
+
+input[type=text] {
+  font-weight: 100;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.11);
+}
+input[type=text]::placeholder {
+  font-weight: 100;
+  opacity: 0.8;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.header-container {
+  top: 0;
+  position: fixed;
+  overflow: hidden;
+  padding: 10px 123px;
+  width: 100%;
+  max-width: 1674px;
+  z-index: 1;
+  background-color: #fff;
+}
+.header-container .header-logo {
+  float: left;
+  width: 33px;
+  margin-right: 15px;
+}
+.header-container .header-title .text {
+  float: left;
+  font-size: 27px;
+  letter-spacing: 1.35px;
+  font-weight: 100;
+  margin: 0;
+}
+.header-container .header-search {
+  position: relative;
+  float: right;
+  margin-right: 30px;
+}
+.header-container .header-search input[type=text] {
+  width: 370px;
+  height: 25px;
+  font-size: 16px;
+  letter-spacing: 1.29px;
+  border: solid #000000 0.5px;
+  padding: 4px 45px 4px 8px;
+}
+.header-container .header-search input[type=text]::placeholder {
+  font-size: 16px;
+  letter-spacing: 1.29px;
+}
+.header-container .header-search img {
+  position: absolute;
+  width: 22px;
+  right: 0;
+  top: 5px;
+  padding-right: 13px;
+}
+.header-container .header-search .search-results {
+  position: fixed;
+  margin-left: 66%;
+  width: 370px;
+  padding: 0 20px;
+  margin-top: 8px;
+}
+.header-container .header-tools {
+  float: right;
+  padding-top: 5px;
+}
+.header-container .header-tools img {
+  width: 22px;
+}
+.header-container .header-tools .tools-user {
+  margin-right: 28px;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.site-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+  position: absolute;
+  padding: 30px 0;
+  background-color: #fff;
+}
+
+.site-info {
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  padding: 0 40%;
+}
+
+.footer-link {
+  font-size: 18px;
+  font-weight: 100;
+  letter-spacing: 1.13px;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+  text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.main-navigation {
+  display: inline;
+  float: left;
+  font-size: 18px;
+  letter-spacing: 1.92px;
+  font-weight: 100;
+  padding: 5px 0;
+  margin-left: 32px;
+}
+.main-navigation ul {
+  display: none;
+  list-style: none;
+}
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+  left: auto;
+}
+.main-navigation ul ul {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  float: left;
+  position: absolute;
+  top: 100%;
+  left: -999em;
+  z-index: 99999;
+}
+.main-navigation ul ul a {
+  width: 200px;
+}
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+  left: 100%;
+}
+.main-navigation ul ul ul {
+  left: -999em;
+  top: 0;
+}
+.main-navigation li {
+  float: left;
+  position: relative;
+  margin-right: 20px;
+}
+.main-navigation a {
+  display: block;
+  text-decoration: none;
+}
+
+/* Small menu. */
+.menu-toggle, .main-navigation.toggled ul {
+  display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-navigation ul {
+    display: inline;
+  }
+}
+.site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden;
+}
+
+.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
+  float: left;
+  width: 50%;
+}
+
+.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Pages Content
+--------------------------------------------------------------*/
+.site-content {
+  margin-top: 55px;
+  width: 100%;
+  min-height: 830px;
+}
+
+.s-box-title {
+  font-size: 30px;
+  line-height: 1.33;
+  letter-spacing: 1.25px;
+  text-align: center;
+}
+
+.s-box-cards {
+  display: flex;
+  justify-content: center;
+  margin-top: 42px;
+}
+.s-box-cards a {
+  margin-right: 15px;
+}
+.s-box-cards a:last-child {
+  margin-right: 0;
+}
+
+.restaurant-card {
+  width: 360px;
+  height: 357px;
+  background-color: #f9f4ea;
+  text-align: center;
+}
+.restaurant-card .r-card-title {
+  font-size: 40px;
+  letter-spacing: 2.67px;
+  margin-top: 28px;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+.restaurant-card .r-card-chef {
+  font-size: 25px;
+  letter-spacing: 1.67px;
+  margin-top: 4px;
+}
+
+.chef-profile {
+  flex-shrink: 0;
+  display: grid;
+}
+.chef-profile img {
+  width: 400px;
+}
+.chef-profile span {
+  background-color: rgba(255, 255, 255, 0.83);
+  font-size: 40px;
+  font-weight: normal;
+  letter-spacing: 1.43px;
+  margin-top: -55px;
+}
+
+.dish-card {
+  width: 360px;
+  height: 735px;
+  background-color: #f9f4ea;
+  text-align: center;
+  margin-right: 15px;
+}
+.dish-card:last-child {
+  margin-right: 0;
+}
+.dish-card .d-card-restaurant {
+  margin: 0;
+  padding: 16px;
+  background-color: #fff;
+  font-size: 30px;
+  font-weight: normal;
+  letter-spacing: 1.77px;
+}
+.dish-card .d-card-title {
+  font-size: 38.4px;
+  font-weight: normal;
+  line-height: 1.23;
+  letter-spacing: 2.56px;
+  margin: 10px 0 20px;
+  padding: 0 70px;
+}
+.dish-card .d-card-ingredients {
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: 1.6px;
+  margin: 0;
+  padding: 0 42px;
+}
+.dish-card .d-card-type {
+  position: absolute;
+  bottom: 38px;
+  margin-left: -16px;
+}
+.dish-card .d-card-price {
+  display: flex;
+  position: absolute;
+  bottom: 8px;
+  margin-left: 42px;
+}
+.dish-card .d-card-price .price-text {
+  font-weight: normal;
+  margin: 0 10px;
+}
+.dish-card .d-card-price .price-line-divisor {
+  width: 112px;
+  height: 1px;
+  border: solid 0.5px #979797;
+}
+
+.search-results {
+  display: none;
+  position: absolute;
+  left: 5px;
+  width: 410px;
+  padding: 10px 57px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+.search-results .type-results {
+  opacity: 0.5;
+  font-size: 15px;
+  letter-spacing: 1.07px;
+  display: none;
+}
+.search-results .content-results {
+  font-size: 15px;
+  letter-spacing: 1.07px;
+}
+
+.home-primary {
+  position: relative;
+  width: 100%;
+}
+.home-primary .primary-box {
+  position: absolute;
+  width: 950px;
+  height: 230px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.83);
+}
+.home-primary .primary-box .p-box-title {
+  font-size: 35px;
+  line-height: 1.1;
+  letter-spacing: 3px;
+  padding: 0 250px;
+}
+.home-primary .primary-box .p-box-search {
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.home-primary .primary-box .p-box-search input[type=text] {
+  width: 445px;
+  height: 48px;
+  font-size: 22px;
+  letter-spacing: 1.57px;
+  border: solid #000000 0.5px;
+  padding: 4px 8px 4px 80px;
+}
+.home-primary .primary-box .p-box-search input[type=text]::placeholder {
+  font-size: 22px;
+  letter-spacing: 1.57px;
+}
+.home-primary .primary-box .p-box-search .search-icon {
+  position: absolute;
+  width: 31px;
+  left: 0;
+  top: 13px;
+  margin-left: 22px;
+}
+.home-primary .primary-box .p-box-search .cancel-icon {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 20px;
+  margin-right: 22px;
+}
+
+.home-secondary {
+  position: relative;
+  width: 100%;
+  margin-top: 5px;
+}
+.home-secondary .s-box-restaurants {
+  margin-top: 140px;
+}
+.home-secondary .s-box-restaurants .box-restaurants-link {
+  display: flex;
+  float: right;
+  margin-right: 21.5%;
+  margin-top: 10px;
+}
+.home-secondary .s-box-restaurants .box-restaurants-link p {
+  font-size: 30px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  margin-right: 12px;
+}
+.home-secondary .s-box-restaurants .box-restaurants-link img {
+  width: 24px;
+}
+.home-secondary .s-box-dishes {
+  margin-top: 155px;
+}
+
+.home-meanings {
+  width: 100%;
+  text-align: center;
+  background-color: #FAFAFA;
+  margin-top: 80px;
+  padding-bottom: 10px;
+}
+.home-meanings .meanings-title {
+  font-size: 30px;
+  letter-spacing: 2.14px;
+  padding-top: 40px;
+}
+.home-meanings .icon-meaning {
+  margin-right: 90px;
+}
+.home-meanings .icon-meaning:last-child {
+  margin-right: 0;
+}
+.home-meanings .icon-meaning p {
+  font-size: 25.2px;
+  letter-spacing: 1.94px;
+}
+
+.home-chefweek {
+  width: 100%;
+  text-align: center;
+  margin-top: 140px;
+}
+.home-chefweek .chefweek-title {
+  font-size: 30px;
+  letter-spacing: 2px;
+  margin: 0 0 50px;
+}
+.home-chefweek .chefweek-box {
+  display: inline-flex;
+  margin: 0 425px;
+}
+.home-chefweek .chefweek-box .chef-biography {
+  margin-left: 50px;
+}
+.home-chefweek .chefweek-box .chef-biography p {
+  margin: 0;
+  font-size: 25px;
+  line-height: 1.2;
+  letter-spacing: 1.08px;
+  text-align: justify;
+}
+.home-chefweek .chefweek-restaurants {
+  text-align: left;
+  margin-left: 425px;
+}
+.home-chefweek .chefweek-restaurants .cw-rest-title {
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: 1.29px;
+  margin: 70px 0 20px;
+}
+.home-chefweek .chefweek-restaurants .cw-box-cards {
+  display: inline-flex;
+}
+.home-chefweek .chefweek-restaurants .cw-box-cards .cw-rest-card {
+  width: 231px;
+  height: 357px;
+  background-color: #f9f4ea;
+  margin-right: 20px;
+}
+.home-chefweek .chefweek-restaurants .cw-box-cards .cw-rest-card:last-child {
+  margin-right: 0px;
+}
+.home-chefweek .chefweek-restaurants .cw-box-cards .cw-rest-card p {
+  font-size: 30px;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 15px;
+  padding: 0 30px;
+}
+
+.home-about {
+  width: 100%;
+  background-color: #FAFAFA;
+  display: inline-flex;
+  margin-top: 120px;
+  padding-bottom: 60px;
+}
+.home-about .about-left {
+  margin-left: 425px;
+  width: 30%;
+}
+.home-about .about-left .about-title {
+  font-size: 30px;
+  letter-spacing: 1.89px;
+}
+.home-about .about-left .about-text {
+  font-size: 22px;
+  letter-spacing: 1.69px;
+  text-align: justify;
+}
+.home-about .about-left .about-dw {
+  width: 181.4px;
+  height: 52.8px;
+  border-radius: 9.6px;
+  border: solid 0.6px #000000;
+  display: inline-flex;
+  margin: 10px 15px 0 0;
+}
+.home-about .about-left .about-dw .about-dw-text {
+  margin-top: 8px;
+  margin-left: 15px;
+  text-align: center;
+  font-weight: normal;
+  letter-spacing: 1.29px;
+}
+.home-about .about-left .about-dw .about-dw-text .dw-text-normal {
+  margin: 0;
+  font-size: 13.2px;
+}
+.home-about .about-left .about-dw .about-dw-text .dw-text-bigger {
+  margin: 0;
+  font-size: 16.8px;
+}
+.home-about .about-left .about-dw:last-child {
+  margin-right: 0;
+}
+.home-about .about-left .about-dw:last-child .about-dw-text {
+  margin-left: 30px;
+}
+.home-about .about-left .about-dw img {
+  margin-left: 11px;
+}
+.home-about .about-right {
+  display: inline-flex;
+  margin-left: 200px;
+}
+
+.restaurant-page {
+  min-height: 80vh;
+  padding: 0 360px;
+}
+.restaurant-page .filter-list {
+  text-align: center;
+  margin-top: 43px;
+  margin-right: 41px;
+  font-size: 18px;
+  letter-spacing: 1.92px;
+}
+.restaurant-page .filter-list:last-child {
+  margin-right: 0;
+}
+.restaurant-page .filter-list .selected {
+  font-weight: normal;
+}
+.restaurant-page .title-section {
+  text-align: center;
+}
+.restaurant-page .title-section p {
+  font-size: 44px;
+  font-weight: normal;
+  line-height: 1.33;
+  letter-spacing: 6.25px;
+  margin: 0 0 30px;
+}
+.restaurant-page .results-restaurants {
+  margin: 42px 0 20px;
+}
+.restaurant-page .results-restaurants .s-box-cards {
+  margin-top: 0;
+  flex-wrap: wrap;
+  justify-content: normal;
+}
+.restaurant-page .results-restaurants .s-box-cards .link-restaurant-card-result {
+  margin: 0 40px 40px 0;
+}
+.restaurant-page .results-restaurants .s-box-cards .link-restaurant-card-result:last-child {
+  margin-right: 0;
+}
+.restaurant-page .results-restaurants .s-box-cards .chef-profile {
+  width: 350px;
+  text-align: center;
+}
+.restaurant-page .results-restaurants .s-box-cards .chef-profile span {
+  font-size: 28px;
+}
+
+.restaurant-site {
+  text-align: center;
+  padding: 0 409px;
+}
+.restaurant-site .profile-section .title-profile {
+  font-size: 55px;
+  font-weight: normal;
+  letter-spacing: 3.67px;
+  margin: 27.2px 0 0;
+}
+.restaurant-site .profile-section .chef-profile {
+  font-size: 30px;
+  letter-spacing: 2px;
+  margin: 5px 0 0;
+}
+.restaurant-site .profile-section .open-profile {
+  display: inline-flex;
+  margin-top: 27.2px;
+}
+.restaurant-site .profile-section .open-profile img {
+  margin-right: 9px;
+}
+.restaurant-site .profile-section .open-profile p {
+  font-size: 18px;
+  line-height: 0.94;
+  letter-spacing: 1.2px;
+  margin: 0;
+}
+.restaurant-site .filter-section {
+  margin-top: 48px;
+}
+.restaurant-site .filter-section a {
+  font-size: 25.5px;
+  letter-spacing: 1.82px;
+}
+.restaurant-site .filter-section img {
+  margin-top: 6px;
+  display: none;
+}
+.restaurant-site .filter-section .item-filter {
+  display: inline-grid;
+  width: 105px;
+  margin: 0 15px;
+}
+.restaurant-site .filter-section .item-filter .show {
+  display: block;
+}
+.restaurant-site .dishes-results .s-box-cards {
+  flex-wrap: wrap;
+  justify-content: normal;
+}
+.restaurant-site .dishes-results .s-box-cards .dish-card {
+  width: 236px;
+  height: 413px;
+  margin: 0 19px 53px;
+  position: relative;
+}
+.restaurant-site .dishes-results .s-box-cards .dish-card img {
+  height: 150px;
+  width: 100%;
+  object-fit: none;
+}
+.restaurant-site .dishes-results .s-box-cards .dish-card .d-card-title {
+  font-size: 22.5px;
+  line-height: 1.14;
+  letter-spacing: 1.5px;
+  padding: 0 10px;
+  margin-top: 18px;
+}
+.restaurant-site .dishes-results .s-box-cards .dish-card .d-card-ingredients {
+  font-size: 19.5px;
+  line-height: 1.31;
+  letter-spacing: 1.3px;
+  padding: 0 30px;
+}
+.restaurant-site .dishes-results .s-box-cards .dish-card .d-card-price {
+  bottom: 25px;
+}
+.restaurant-site .dishes-results .s-box-cards .dish-card .d-card-price .price-text {
+  font-size: 21px;
+  margin: -10px 10px;
+  letter-spacing: 0.9px;
+}
+.restaurant-site .dishes-results .s-box-cards .dish-card .d-card-price .price-line-divisor {
+  width: 49.5px;
+  border: solid 0.2px #979797;
+  margin: 0;
+}
+
+.content-chef .home-chefweek {
+  margin: 30px 0 50px;
+}
+.content-chef .home-chefweek .chefweek-title {
+  font-size: 40px;
+  font-weight: normal;
+  letter-spacing: 2.94px;
+  margin-bottom: 30px;
+}
+.content-chef .home-chefweek .cw-rest-title {
+  margin-top: 40px;
+}
+.content-chef .home-chefweek .cw-box-cards a {
+  margin-right: 15px;
+}
+.content-chef .home-chefweek .cw-rest-card {
+  height: 215px !important;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before, .clear:after, .entry-content:before, .entry-content:after, .comment-content:before, .comment-content:after, .site-header:before, .site-header:after, .site-content:before, .site-content:after, .site-footer:before, .site-footer:after {
+  content: "";
+  display: table;
+  table-layout: fixed;
+}
+
+.clear:after, .entry-content:after, .comment-content:after, .site-header:after, .site-content:after, .site-footer:after {
+  clear: both;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley, .entry-content .wp-smiley, .comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed, iframe, object {
+  max-width: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */

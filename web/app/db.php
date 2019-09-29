@@ -1,0 +1,1 @@
+/Users/moveo/Sites/valet/epicure/web/app/plugins/query-monitor/wp-content/db.php
