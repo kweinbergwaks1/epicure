@@ -788,6 +788,9 @@ embed, iframe, object {
   .header-container .header-tools {
     margin-right: 155px;
   }
+  .header-container .header-search .search-results {
+    margin-left: 58%;
+  }
 
   .box-restaurants-link {
     margin-right: 12%;
