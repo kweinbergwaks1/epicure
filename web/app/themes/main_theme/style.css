@@ -781,4 +781,55 @@ embed, iframe, object {
   max-width: 100%;
 }
 
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
+  .header-container {
+    padding: 10px 80px;
+  }
+  .header-container .header-tools {
+    margin-right: 155px;
+  }
+
+  .box-restaurants-link {
+    margin-right: 12%;
+  }
+
+  .home-chefweek .chefweek-box {
+    margin: 0 225px;
+  }
+  .home-chefweek .chefweek-restaurants {
+    margin-left: 225px;
+  }
+
+  .home-about .about-left {
+    margin-left: 225px;
+    width: 40%;
+  }
+
+  .restaurant-page {
+    padding: 0 120px;
+  }
+  .restaurant-page .s-box-cards {
+    justify-content: center !important;
+  }
+  .restaurant-page .link-restaurant-card-result:first-child {
+    margin-left: 30px !important;
+  }
+
+  .restaurant-card {
+    width: 300px;
+    height: 330px;
+  }
+  .restaurant-card .r-card-title {
+    margin-top: 22px;
+  }
+
+  .restaurant-site {
+    padding: 0 150px;
+  }
+
+  .site-info {
+    padding: 0 37%;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
