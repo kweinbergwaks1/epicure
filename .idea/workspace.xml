@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="189b5264-da2f-47a5-860a-8c11f755a9f2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/main_theme/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/main_theme/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/main_theme/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/main_theme/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/app/themes/main_theme/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/main_theme/style.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,7 +40,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/app/themes/main_theme/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -81,7 +84,9 @@
       <workItem from="1569305054893" duration="20159000" />
       <workItem from="1569392761652" duration="22898000" />
       <workItem from="1569477161233" duration="17740000" />
-      <workItem from="1569739420887" duration="4790000" />
+      <workItem from="1569739420887" duration="5202000" />
+      <workItem from="1571132554263" duration="5000" />
+      <workItem from="1571826156127" duration="57000" />
     </task>
     <servers />
   </component>
@@ -93,7 +98,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

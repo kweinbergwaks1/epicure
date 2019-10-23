@@ -54,9 +54,8 @@ input[type=text]::placeholder {
   top: 0;
   position: fixed;
   overflow: hidden;
-  padding: 10px 123px;
+  padding: 10px 0;
   width: 100%;
-  max-width: 1674px;
   z-index: 1;
   background-color: #fff;
 }
@@ -64,6 +63,7 @@ input[type=text]::placeholder {
   float: left;
   width: 33px;
   margin-right: 15px;
+  margin-left: 123px;
 }
 .header-container .header-title .text {
   float: left;
@@ -106,6 +106,7 @@ input[type=text]::placeholder {
 .header-container .header-tools {
   float: right;
   padding-top: 5px;
+  margin-right: 123px;
 }
 .header-container .header-tools img {
   width: 22px;
